@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MR. TATTOO | Premium Tattoo Studio Chennai — Custom Ink & Body Art</title>
+<meta name="description" content="Mr. Tattoo — Chennai's most trusted tattoo studio. Clinical hygiene, custom ink, and premium body art near Marina Beach. Book your consultation today."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "on-background":"#e5e2e1","primary-container":"#d4af37","outline-variant":"#4d4635",
+        "primary":"#f2ca50","surface-container-lowest":"#0e0e0e",
+        "surface-container-highest":"#353534","surface-container":"#201f1f",
+        "on-primary":"#3c2f00","surface-container-high":"#2a2a2a",
+        "on-surface-variant":"#d0c5af","surface-variant":"#353534",
+        "on-primary-container":"#554300","on-error-container":"#ffdad6",
+        "background":"#131313","outline":"#99907c",
+        "surface-container-low":"#1c1b1b","surface":"#131313",
+        "secondary-container":"#d10235","on-surface":"#e5e2e1",
+        "tertiary-container":"#97b0ff","on-tertiary-container":"#254188"
+      },
+      borderRadius:{"DEFAULT":"0px","lg":"0px","xl":"0px","full":"9999px"},
+      fontFamily:{"headline":["Epilogue"],"body":["Manrope"],"label":["Manrope"]}
+    }
+  }
+}
+</script>
+<style>
+  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24}
+  body{font-family:'Manrope',sans-serif;background:#131313;color:#e5e2e1;overflow-x:hidden}
+  h1,h2,h3,h4{font-family:'Epilogue',sans-serif}
+  .ink-gradient{background:linear-gradient(135deg,#f2ca50 0%,#d4af37 100%)}
+  .glass-nav{background:rgba(19,19,19,0.75);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+  .gold-glow{box-shadow:0 0 40px rgba(242,202,80,0.08)}
+  .reveal{opacity:0;transform:translateY(60px)}
+  .reveal-left{opacity:0;transform:translateX(-60px)}
+  .reveal-right{opacity:0;transform:translateX(60px)}
+  .reveal-scale{opacity:0;transform:scale(0.9)}
+  ::-webkit-scrollbar{width:6px}
+  ::-webkit-scrollbar-track{background:#131313}
+  ::-webkit-scrollbar-thumb{background:#4d4635}
+  ::-webkit-scrollbar-thumb:hover{background:#f2ca50}
+  ::selection{background:#f2ca50;color:#3c2f00}
+  .parallax-img{will-change:transform}
+  .nav-link{position:relative}
+  .nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:#f2ca50;transition:width 0.3s ease}
+  .nav-link:hover::after,.nav-link.active::after{width:100%}
+  .marquee{animation:marquee 25s linear infinite}
+  @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+  .pulse-gold{animation:pulseGold 2s ease-in-out infinite}
+  @keyframes pulseGold{0%,100%{box-shadow:0 0 0 0 rgba(242,202,80,0.3)}50%{box-shadow:0 0 20px 10px rgba(242,202,80,0)}}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  .float-anim{animation:float 3s ease-in-out infinite}
+  .hamburger span{display:block;width:24px;height:2px;background:#f2ca50;transition:all 0.3s ease;margin:5px 0}
+  .hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+  .hamburger.open span:nth-child(2){opacity:0}
+  .hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+  .mobile-menu{transform:translateX(100%);transition:transform 0.4s cubic-bezier(0.4,0,0.2,1)}
+  .mobile-menu.open{transform:translateX(0)}
+</style>
+</head>
+<body>
+<!-- NAVIGATION -->
+<nav id="main-nav" class="fixed top-0 w-full z-50 flex justify-between items-center px-6 md:px-12 py-5 glass-nav transition-all duration-300">
+  <a href="#hero" class="text-2xl font-black tracking-tighter text-[#f2ca50] font-headline">MR. TATTOO</a>
+  <div class="hidden md:flex items-center gap-8">
+    <a class="nav-link font-headline tracking-tighter uppercase font-bold text-sm text-white/70 hover:text-white transition-colors" href="#hero">HOME</a>
+    <a class="nav-link font-headline tracking-tighter uppercase font-bold text-sm text-white/70 hover:text-white transition-colors" href="#about">ABOUT</a>
+    <a class="nav-link font-headline tracking-tighter uppercase font-bold text-sm text-white/70 hover:text-white transition-colors" href="#services">SERVICES</a>
+    <a class="nav-link font-headline tracking-tighter uppercase font-bold text-sm text-white/70 hover:text-white transition-colors" href="#gallery">PORTFOLIO</a>
+    <a class="nav-link font-headline tracking-tighter uppercase font-bold text-sm text-white/70 hover:text-white transition-colors" href="#contact">CONTACT</a>
+  </div>
+  <a href="#contact" class="hidden md:block ink-gradient text-[#3c2f00] px-6 py-3 font-headline font-bold text-xs tracking-widest uppercase hover:scale-95 transition-transform">BOOK NOW</a>
+  <button id="hamburger-btn" class="hamburger md:hidden z-50" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="mobile-menu fixed inset-0 z-40 bg-[#131313]/98 flex flex-col items-center justify-center gap-8 md:hidden">
+  <a onclick="closeMobileMenu()" class="font-headline text-3xl font-black uppercase text-white/80 hover:text-[#f2ca50] transition-colors" href="#hero">HOME</a>
+  <a onclick="closeMobileMenu()" class="font-headline text-3xl font-black uppercase text-white/80 hover:text-[#f2ca50] transition-colors" href="#about">ABOUT</a>
+  <a onclick="closeMobileMenu()" class="font-headline text-3xl font-black uppercase text-white/80 hover:text-[#f2ca50] transition-colors" href="#services">SERVICES</a>
+  <a onclick="closeMobileMenu()" class="font-headline text-3xl font-black uppercase text-white/80 hover:text-[#f2ca50] transition-colors" href="#gallery">PORTFOLIO</a>
+  <a onclick="closeMobileMenu()" class="font-headline text-3xl font-black uppercase text-white/80 hover:text-[#f2ca50] transition-colors" href="#contact">CONTACT</a>
+  <a onclick="closeMobileMenu()" href="#contact" class="mt-4 ink-gradient text-[#3c2f00] px-8 py-4 font-headline font-bold text-sm tracking-widest uppercase">BOOK NOW</a>
+</div>
+
+<!-- ======================== HERO ======================== -->
+<section id="hero" class="relative h-screen flex items-center overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <img class="parallax-img w-full h-full object-cover opacity-30 grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA92QTrfW2uPOQ_e506mNDD1LRwJf6tMKkeN14OPUnmvuu8fDVZmT0Fols3hoYKTq84IpCKrahRHlhhGQgGD9OizwGMaXs_G36IMEyg3fEk9yfDOfZtNeYXDGca0QC4sGFU5lbeEeRYBlJMuq3Kg7EmJ5BslHxCSWyKzYW7o_cwBbv52eb0CLbTXhMYNslKod0N8RWHHbT0ge4urCJtyFa_zYcA13VhRQ5ou7ZufpAXjesLV40SdM85TznNfLH9lwl1gXSP_Cbtp-I" alt="Tattoo artist at work"/>
+    <div class="absolute inset-0 bg-gradient-to-r from-[#131313] via-[#131313]/60 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-[#131313] via-transparent to-transparent"></div>
+  </div>
+  <div class="relative z-10 px-6 md:px-12 max-w-4xl">
+    <span class="text-[#f2ca50] font-bold tracking-[0.3em] text-xs mb-4 block uppercase" id="hero-tag">The Gold Standard in Chennai</span>
+    <h1 class="text-5xl md:text-8xl font-black text-white leading-none tracking-tighter mb-8">Custom Ink &<br/><span class="text-[#f2ca50]">Body Art</span><br class="md:hidden"/> at Marina Beach</h1>
+    <p class="text-lg md:text-xl text-[#d0c5af] max-w-xl mb-10 font-medium">Hygienic, affordable, and professional tattoo services in the heart of Chennai. Where clinical precision meets artistic soul.</p>
+    <div class="flex flex-wrap gap-4" id="hero-cta">
+      <a href="#contact" class="ink-gradient text-[#3c2f00] px-8 py-4 font-bold tracking-widest uppercase hover:scale-105 transition-transform text-sm">Book a Consultation</a>
+      <a href="#gallery" class="border border-[#4d4635] px-8 py-4 font-bold tracking-widest uppercase hover:bg-white/5 transition-colors text-sm">View Our Work</a>
+    </div>
+  </div>
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10">
+    <span class="text-[#f2ca50] text-xs tracking-widest uppercase font-bold">Scroll</span>
+    <div class="w-px h-12 bg-gradient-to-b from-[#f2ca50] to-transparent"></div>
+  </div>
+</section>
+
+<!-- Marquee Strip -->
+<div class="bg-[#f2ca50] py-3 overflow-hidden">
+  <div class="marquee whitespace-nowrap flex gap-12">
+    <span class="text-[#3c2f00] font-headline font-black text-sm tracking-widest uppercase">★ CUSTOM TATTOOS ★ BODY ART ★ COVER-UPS ★ FINE LINE ★ REALISM ★ GEOMETRIC ★ TRADITIONAL ★ NEO-TRADITIONAL ★ CALLIGRAPHY ★ CUSTOM TATTOOS ★ BODY ART ★ COVER-UPS ★ FINE LINE ★ REALISM ★ GEOMETRIC ★ TRADITIONAL ★ NEO-TRADITIONAL ★ CALLIGRAPHY ★</span>
+  </div>
+</div>
+
+<!-- ======================== WHY CHOOSE US ======================== -->
+<section class="py-20 md:py-32 px-6 md:px-12 bg-[#1c1b1b]">
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6">
+    <div class="md:col-span-4 bg-[#201f1f] p-8 md:p-12 border-l-4 border-[#f2ca50] reveal-left">
+      <span class="material-symbols-outlined text-[#f2ca50] text-4xl mb-6">verified_user</span>
+      <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 tracking-tighter uppercase">Clinical Hygiene</h3>
+      <p class="text-[#d0c5af]">Hospital-grade sterilization protocols. Single-use needles and premium pigments are our baseline standard.</p>
+    </div>
+    <div class="md:col-span-8 bg-[#2a2a2a] p-8 md:p-12 flex flex-col justify-between relative overflow-hidden reveal-right">
+      <div class="relative z-10">
+        <div class="flex items-center gap-1 mb-4">
+          <span class="material-symbols-outlined text-[#f2ca50]" style="font-variation-settings:'FILL' 1">star</span>
+          <span class="material-symbols-outlined text-[#f2ca50]" style="font-variation-settings:'FILL' 1">star</span>
+          <span class="material-symbols-outlined text-[#f2ca50]" style="font-variation-settings:'FILL' 1">star</span>
+          <span class="material-symbols-outlined text-[#f2ca50]" style="font-variation-settings:'FILL' 1">star</span>
+          <span class="material-symbols-outlined text-[#f2ca50]" style="font-variation-settings:'FILL' 1">star_half</span>
+          <span class="ml-2 text-[#f2ca50] font-bold text-xl">4.9/5</span>
+        </div>
+        <h3 class="text-3xl md:text-5xl font-black text-white mb-4 tracking-tighter uppercase">Most Trusted in Chennai</h3>
+        <p class="text-[#d0c5af] max-w-xl">Over 2,000 satisfied clients chose Mr. Tattoo for their lifelong art pieces.</p>
+      </div>
+      <div class="absolute -bottom-10 -right-10 opacity-5"><span class="material-symbols-outlined text-[200px]">ink_pen</span></div>
+    </div>
+    <div class="md:col-span-6 bg-[#353534] p-8 md:p-12 reveal-left">
+      <h3 class="text-xl md:text-2xl font-bold text-[#f2ca50] mb-3 tracking-tighter uppercase">Affordable Luxury</h3>
+      <p class="text-[#d0c5af]">Transparent pricing with no hidden costs for all custom design work.</p>
+    </div>
+    <div class="md:col-span-6 bg-[#131313] p-8 md:p-12 border border-[#4d4635]/20 reveal-right">
+      <h3 class="text-xl md:text-2xl font-bold text-white mb-3 tracking-tighter uppercase">Marina Beach Location</h3>
+      <p class="text-[#d0c5af]">Experience art in Chennai's historic coastal heart.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== ABOUT ======================== -->
+<section id="about" class="relative min-h-screen flex flex-col justify-center px-6 md:px-12 py-20 overflow-hidden">
+  <div class="absolute top-0 right-0 w-full md:w-1/2 h-full opacity-30 grayscale">
+    <img class="parallax-img w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTUme509YUxDb0dT3tddecjw2txt-OjMdWUcSm-HPvTD00sAANoSizujOAN5OZ0IxxaYbCkLzO-IgVeO2puP06DO_z5wVtGwfxNoAJwpWuuAObHwIw-wiEYME8SugVvzMlIoyqNHwdpB5RRpkkAmHI4FAqxqBwbwIjhaD9-A4GLRtMjI6vZTt90nb6IOvpLAlX2PcSafXQPpSH0KlmlxYdDAh1Y6__1aL5DmqLhX2H3gI_Qr7dbLdCeSLXr1HcP5qVD5M39-ADP_c" alt="Studio interior"/>
+    <div class="absolute inset-0 bg-gradient-to-r from-[#131313] to-transparent"></div>
+  </div>
+  <div class="relative z-10 max-w-3xl">
+    <span class="text-[#f2ca50] font-bold tracking-[0.2em] text-xs mb-4 block uppercase reveal">01 / THE VIBE</span>
+    <h2 class="text-5xl md:text-8xl font-black tracking-tighter leading-none mb-8 reveal">BRUTAL ART.<br/><span class="text-[#f2ca50]">COASTAL SOUL.</span></h2>
+    <p class="text-lg md:text-2xl text-[#d0c5af] max-w-xl leading-relaxed mb-10 reveal">Located a stone's throw from Marina Beach, we've created a sanctuary where clinical precision meets a welcoming, high-energy environment. No gatekeeping, just pure artistry.</p>
+    <div class="flex items-center gap-4 reveal">
+      <span class="material-symbols-outlined text-[#f2ca50] text-4xl float-anim">waves</span>
+      <span class="font-bold tracking-widest text-xs uppercase">Marina Beach District</span>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== HYGIENE ======================== -->
+<section class="bg-[#1c1b1b] px-6 md:px-12 py-20 md:py-32">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
+    <div>
+      <span class="text-[#f2ca50] text-sm font-bold tracking-[0.2em] uppercase mb-4 block reveal">02 / HYGIENE</span>
+      <h2 class="text-4xl md:text-5xl font-black tracking-tighter mb-8 uppercase leading-tight reveal">Surgically Clean.<br/>Artistically Driven.</h2>
+      <p class="text-[#d0c5af] text-lg mb-12 max-w-md reveal">We operate with medical-facility rigor. Every needle, cap, and barrier is strictly single-use.</p>
+      <div class="space-y-8">
+        <div class="flex gap-6 reveal-left">
+          <div class="w-12 h-12 bg-[#353534] flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-[#f2ca50]">biotech</span></div>
+          <div><h4 class="font-bold text-lg uppercase tracking-tight">Medical Grade Sterilization</h4><p class="text-sm text-[#d0c5af]">Class-B Autoclave sterilization for all equipment.</p></div>
+        </div>
+        <div class="flex gap-6 reveal-left">
+          <div class="w-12 h-12 bg-[#353534] flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-[#f2ca50]">verified_user</span></div>
+          <div><h4 class="font-bold text-lg uppercase tracking-tight">Certified Safe Environment</h4><p class="text-sm text-[#d0c5af]">Fully compliant with international health protocols.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+      <div class="bg-[#201f1f] h-60 md:h-80 flex items-end p-6 relative group overflow-hidden reveal-scale">
+        <img class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-80 transition-opacity duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJn8YtakB7UTTCWUV4ljPpQy-hW5-epeqdjHMu-qoCJjrphw8FtyiOv1PgbETGAmHYZqiKbs-P2DCSQPH8XEl-IfS0S5AaFpeKsnWSkcomkD_KLUm6CdEnmH8ytRSxgUUj-xNuv_U5_D2pSUMYruR8q4b6GhmQvuPOdJv9zUKgXvlSldQQChTOhhpXwFqeshhhLfIJ29MVxv-AdIHURV8pC2EvmpLUjK-KN3e0Ko5h0mMQx_DHh_5gJIstt5UPt5wqwb22vsFZn0w" alt="Clinical tools"/>
+        <span class="relative z-10 font-black text-2xl uppercase italic">Protocol</span>
+      </div>
+      <div class="bg-[#f2ca50] flex items-center justify-center p-6 text-[#3c2f00] text-center reveal-scale">
+        <div><span class="text-5xl font-black block mb-2">100%</span><span class="font-bold text-xs uppercase tracking-widest">Disposable Tech</span></div>
+      </div>
+      <div class="col-span-2 bg-[#353534] p-8 md:p-12 reveal">
+        <h3 class="font-black text-2xl md:text-3xl uppercase mb-4 italic">The Gold Standard</h3>
+        <p class="text-[#d0c5af] leading-relaxed">Our studio features a dedicated sterilization room separated from tattoo bays, preventing cross-contamination.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== ARTISTS ======================== -->
+<section class="px-6 md:px-12 py-20 md:py-32">
+  <span class="text-[#f2ca50] text-sm font-bold tracking-[0.2em] uppercase mb-4 block text-center reveal">03 / THE CREW</span>
+  <h2 class="text-5xl md:text-8xl font-black tracking-tighter text-center mb-16 md:mb-24 uppercase reveal">The Visionaries</h2>
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
+    <div class="md:col-span-7 group reveal-left">
+      <div class="relative aspect-[16/9] overflow-hidden">
+        <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKJccvOKqtBa5AeDKiG0gt9RAiKi8ZHeD6q-grkk19FXSAGJChjBSsAgJxEbnJDXtD7rBaJGIi8HsmEIg9NPLb7OTrxfiIpxLgXrD1Lm3EbfUBBOSsht_d_vwlDXQCMIOxrV5q_IF3RpPFuJVWhCEy6zzNQPXxioLpEm9OOSAgWBMcSuIb8tidS3PM9Kizp2URzKcHurFJBRnoAwKLwgM6C-jDJSILGm9ITpC6D8wZGJJi1ONu-IwH52tXAlCTrptntFU76aBbaSQ" alt="Lead Artist"/>
+        <div class="absolute bottom-0 left-0 p-6 md:p-8 glass-nav w-full translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+          <h3 class="text-2xl md:text-3xl font-black uppercase text-[#f2ca50]">ALEX "INK" VANCE</h3>
+          <p class="text-sm uppercase tracking-widest text-white/70">Founder & Lead Realism Artist</p>
+        </div>
+      </div>
+    </div>
+    <div class="md:col-span-5 group reveal-right">
+      <div class="relative aspect-square overflow-hidden">
+        <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfVxXf0qp07V0PE5XXcj6ieYFf62wDmkjbBo0AmN6G2mRRM3_0e0RJJ7F-wOt8mPQWvHrN-Y6krJNgAoxFNPxTfB7CjEVRq2kKdIR_gYSs92xBM0Q2P_lozKrxy7ah65RbA9YX8QPIA74zCQrw6HNpkm-FbZqwezKpFeWpeys8n6d2orc3O5ynjQWJzeoiNXsBpvKp6-nHpbSAdvmrGPgO1raaiIOwSPANfivRvK8oPqodiO5rxf740TERezyurNWpCQJYiB7o_w8" alt="Artist 2"/>
+        <div class="absolute bottom-0 left-0 p-6 md:p-8 glass-nav w-full translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+          <h3 class="text-2xl font-black uppercase text-[#f2ca50]">SARAH CHENO</h3>
+          <p class="text-sm uppercase tracking-widest text-white/70">Geometric & Fine-line</p>
+        </div>
+      </div>
+    </div>
+    <div class="md:col-span-4 group reveal-left">
+      <div class="relative aspect-square overflow-hidden">
+        <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJFxJgoxJVGfxgDpENlJdXzInMvQSFl7ROJE8imGjvT2_zuAnCr-Ikb2mIHnD-Myt8SCKjH2VL9Ydc1PNhcdS_tEjSLf1DS50FZZEM8EDAM4MwDC7k5SUoFgQer0uzCqwDfDpyrnZ1s60SDZF9BEM8XGIg8MT0zdCWBjCi2Yh1MFVVTEIPDlxHyxaX5x9DAfHMT78SWgG1ehazKTAh95Du5HzIajxVQGTAO8suRABqv0fJ_GB3jRlaitDIx-KTl3Thuw21_MgYO9M" alt="Artist 3"/>
+        <div class="absolute bottom-0 left-0 p-6 md:p-8 glass-nav w-full translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+          <h3 class="text-2xl font-black uppercase text-[#f2ca50]">MARCUS REED</h3>
+          <p class="text-sm uppercase tracking-widest text-white/70">Traditional & Neo-Traditional</p>
+        </div>
+      </div>
+    </div>
+    <div class="md:col-span-8 bg-[#201f1f] p-8 md:p-12 flex flex-col justify-center reveal">
+      <h3 class="font-black text-3xl md:text-4xl uppercase mb-6 italic leading-none">United by Precision</h3>
+      <p class="text-lg md:text-xl text-[#d0c5af] leading-relaxed italic">"We don't just 'do tattoos.' We collaborate on permanent identity. Each member was selected for their commitment to clinical standards and client-first hospitality."</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== TESTIMONIALS ======================== -->
+<section class="bg-[#f2ca50] px-6 md:px-12 py-20 md:py-32 text-[#3c2f00] overflow-hidden relative">
+  <div class="absolute top-0 right-0 text-[10rem] md:text-[20rem] font-headline font-black opacity-10 leading-none pointer-events-none select-none -mr-20 -mt-10">INK</div>
+  <span class="text-sm font-bold tracking-[0.2em] uppercase mb-8 md:mb-12 block reveal">04 / VOICES</span>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 relative z-10">
+    <div class="border-l-4 border-[#3c2f00] pl-6 md:pl-8 reveal-left">
+      <p class="text-2xl md:text-3xl font-black italic uppercase leading-tight mb-6">"Unbelievably <span class="bg-[#3c2f00] text-[#f2ca50] px-2">clean environment</span>. It felt like a gallery."</p>
+      <span class="font-bold uppercase tracking-widest text-xs">— David K.</span>
+    </div>
+    <div class="border-l-4 border-[#3c2f00] pl-6 md:pl-8 reveal">
+      <p class="text-2xl md:text-3xl font-black italic uppercase leading-tight mb-6">"Incredible detail for such a <span class="bg-[#3c2f00] text-[#f2ca50] px-2">budget-friendly</span> studio."</p>
+      <span class="font-bold uppercase tracking-widest text-xs">— Priya M.</span>
+    </div>
+    <div class="border-l-4 border-[#3c2f00] pl-6 md:pl-8 reveal-right">
+      <p class="text-2xl md:text-3xl font-black italic uppercase leading-tight mb-6">"Professional, fast, and <span class="bg-[#3c2f00] text-[#f2ca50] px-2">affordable</span>. My go-to."</p>
+      <span class="font-bold uppercase tracking-widest text-xs">— James L.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== SERVICES ======================== -->
+<section id="services" class="bg-[#1c1b1b] py-20 md:py-32 px-6 md:px-12">
+  <div class="mb-16 md:mb-24">
+    <span class="text-[#f2ca50] uppercase tracking-[0.3em] font-bold text-xs mb-4 block reveal">SURGICAL PRECISION. ARTISTIC SOUL.</span>
+    <h2 class="text-5xl md:text-9xl font-black tracking-tighter leading-[0.9] uppercase reveal">Services &<br/><span class="text-[#f2ca50]">Investment</span></h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-1">
+    <div class="bg-[#131313] p-8 md:p-12 hover:bg-[#201f1f] transition-colors group reveal-left">
+      <div class="flex justify-between items-start mb-12"><span class="material-symbols-outlined text-[#f2ca50] text-5xl">edit_square</span><span class="text-4xl text-white/10 group-hover:text-[#f2ca50]/20 transition-colors font-headline">01</span></div>
+      <h3 class="text-3xl md:text-4xl font-bold uppercase mb-4 tracking-tighter">Custom Tattoos</h3>
+      <p class="text-[#d0c5af] mb-8 leading-relaxed max-w-md">Unique designs for your anatomy and narrative. Every piece is a bespoke commission crafted through consultation.</p>
+      <div class="w-full aspect-[16/9] overflow-hidden bg-[#353534]">
+        <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeh-pfoZJakdzfYneBsoNqQvLxocCyGqpSUPWBB9lVFMJ4blhx1lTJpRphoCZ9HerMxxWA-HdC1VXOsE0StKL6_8ov5uxXno_9GEFFQAAC-absQJknrNxh9hkqcNduOSMdsHuqb3stCp3JOWmxRo1UBjGLa7HUfnQN9b69Mt278iLjR86ggkUmHho3_hzVmHStoXx7ZD38CRv-Vs3Dko8y7m5oG6NbS_kbvH-FM4tiWaqDyBDisAJJ-IBfUPx8Fgaeh-mLfLSeRbU" alt="Custom tattoo work"/>
+      </div>
+    </div>
+    <div class="bg-[#131313] p-8 md:p-12 hover:bg-[#201f1f] transition-colors group reveal-right">
+      <div class="flex justify-between items-start mb-12"><span class="material-symbols-outlined text-[#f2ca50] text-5xl">ink_pen</span><span class="text-4xl text-white/10 group-hover:text-[#f2ca50]/20 transition-colors font-headline">02</span></div>
+      <h3 class="text-3xl md:text-4xl font-bold uppercase mb-4 tracking-tighter">Body Art</h3>
+      <p class="text-[#d0c5af] mb-8 leading-relaxed max-w-md">Full sleeves, back pieces, and anatomical mapping treating the body as a three-dimensional canvas.</p>
+      <div class="w-full aspect-[16/9] overflow-hidden bg-[#353534]">
+        <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBj81bjQaZydE9Py_f0EHauVDgLCxlduaC4kK3Oqjmt5BFrCo2UMxJ7yCxthBWMKdfi6ftLcGd-UrvDU7VykW-BCx3T34KNwOJqMyka_y3qc76uVBxgS1vGvKq7Fs9kGw_n8rAJvabDtYbXvhDHAUzEaxBlZOioccjQR5I2BAeb89cuuGO9O1UZNDM9WTup28ILv5d-IpJcfLEbKfoMldGwS-jZCiAc_MSaBz2a78cc1-WQu6SIfVi_R8a-bVAp7MotQD0KgzQu3v0" alt="Body art"/>
+      </div>
+    </div>
+  </div>
+  <!-- Pricing -->
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mt-20 md:mt-32">
+    <div class="md:col-span-5">
+      <h3 class="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-none mb-6 reveal">Pricing<br/>Philosophy</h3>
+      <p class="text-lg text-[#d0c5af] mb-8 reveal">Luxury and hygiene shouldn't be inaccessible. Transparent pricing reflecting clinical-grade equipment.</p>
+      <div class="space-y-8 mt-10">
+        <div class="border-l-4 border-[#f2ca50] pl-6 md:pl-8 reveal-left">
+          <span class="text-[#f2ca50] uppercase text-xs font-black tracking-widest block mb-2">BASE RATE</span>
+          <h4 class="text-2xl md:text-3xl font-bold">₹1,500 / MINIMUM</h4>
+          <p class="text-[#d0c5af] text-sm mt-2">Covers sterilization, needles, setup.</p>
+        </div>
+        <div class="border-l-4 border-[#f2ca50] pl-6 md:pl-8 reveal-left">
+          <span class="text-[#f2ca50] uppercase text-xs font-black tracking-widest block mb-2">SURFACE AREA</span>
+          <h4 class="text-2xl md:text-3xl font-bold">₹500 - ₹1,000 / SQ. INCH</h4>
+          <p class="text-[#d0c5af] text-sm mt-2">Variable based on complexity.</p>
+        </div>
+      </div>
+    </div>
+    <div class="md:col-span-7 bg-[#201f1f] p-1 reveal-right">
+      <div class="bg-[#131313] p-8 md:p-12 h-full border border-[#4d4635]/20 flex flex-col justify-center">
+        <h4 class="text-xl md:text-2xl font-bold uppercase mb-4 tracking-tight">The "No-Guesswork" Guarantee</h4>
+        <p class="text-[#d0c5af] mb-8 leading-relaxed">Definitive quote during consultation. No hourly surprises. You pay for the art, not the clock.</p>
+        <div class="grid grid-cols-2 gap-6">
+          <div class="bg-[#1c1b1b] p-6"><span class="material-symbols-outlined text-[#f2ca50] mb-3">verified</span><p class="font-bold text-xs uppercase tracking-widest">Fixed Quotes</p></div>
+          <div class="bg-[#1c1b1b] p-6"><span class="material-symbols-outlined text-[#f2ca50] mb-3">sanitizer</span><p class="font-bold text-xs uppercase tracking-widest">Medical Grade</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== GALLERY ======================== -->
+<section id="gallery" class="py-20 md:py-32 px-6 md:px-12 bg-[#131313]">
+  <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-4">
+    <div><span class="text-[#f2ca50] font-bold tracking-[0.3em] text-xs mb-4 block uppercase reveal">Social Gallery</span><h2 class="text-4xl md:text-5xl font-black text-white tracking-tighter uppercase reveal">Fresh From The Studio</h2></div>
+    <a class="text-[#f2ca50] font-bold tracking-widest uppercase border-b-2 border-[#f2ca50] pb-2 hover:text-white transition-colors reveal" href="https://www.instagram.com/_mr.tattoos_" target="_blank">@_mr.tattoos_</a>
+  </div>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+    <div class="aspect-square bg-[#201f1f] group overflow-hidden reveal-scale"><img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7zEkWecyyqxK3p1IRzwK515HDd98TqGNER9C3W2RgY_-dM5bGZu5BVk87zF23-oxgmm9i5mwiuCc4b933KbkYqDRrpLdwSlizNrFp2WNvQkkY4qmeqdrfMNaNl1KWL1caLEyOYAqxw7sNt3CoZdpSmF4viTteAYXXx4E4h_6yw8iWGVE2vQ20PcLzvuxfgo3uC6mDUsMe_cPpqUc7BGxFU8E9GfsFdsXGK3FJPoi5VGxMmikckPgDpn2UboQTSVnru2IEEKFphdk" alt="Portfolio 1"/></div>
+    <div class="aspect-square bg-[#201f1f] group overflow-hidden reveal-scale"><img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYa2mdyeV0K6h0cfFPyj2nOhtnolyD2uwcIL-6qmWvp43BdE5yUASZPIB5DTbs3Dq2l8cxcyb7ZSzLPr9TyWpB0fXIjURPyvxgLYQRij-SdGyRhbGRHNN4R_fC6Lu25nue6Vu6NyNWBNFfB5US21eLboaXuqW_31-7nJPC36z1vQx-HwXDQeRM4fhhrjC74eEVXQ_DlRUNiEOCf2ezvTIyxiwpsZMWykocdI4pIGhSQfowkNY18r8PRGNlv4hOi_1UgbYzT7NDqn4" alt="Portfolio 2"/></div>
+    <div class="aspect-square bg-[#201f1f] group overflow-hidden reveal-scale"><img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYzZEj7FdrqyLY0rAeoo1e5b6ZBV0CXcejbvfMOqIJf92r4_Or4IFqXFDkvVhl_L7nwHOzA15de_1im6cV3Yzw6BlJWy2Rqz2afngAX_UFt3n5W808mwI0ztVeJPcZo_HbUSuHIEA4zNdcbCIH-RZCF0FTIsUaCJtxfbKggza7yRN-MB6a9o8udrvBqLNgnlFLDFGhC_MtAoAvyMfCEOlDO0F6u7Jc6rR2jvsvE4FlaIYt5NoyZqSGIAQh1mc5PXNUfrUwGEKuZoo" alt="Portfolio 3"/></div>
+    <div class="aspect-square bg-[#201f1f] group overflow-hidden reveal-scale"><img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6-UNlfY25oShRoHuL3QLOgIm84ig3X8LwgZkf9RegeCI_oo4CuNvsyvq00wO6DqJYcvwnd_LW2qENVK1h5vI9WCjzfAZ81iCxbJZoPtjNipZmfGgT04SwCDYymdZwIicNNEss5X0UwebNYtE8D0UWmAxAD6fbPpKtisDDYfl4PRl6Tr7FJsqDcIWvbX9ILpYHfS5N_z1L5-z38PzqJMMRGCNyCo5O3hJO5BmF7f3RRJp16Lgkf59X34KTNFZT2tCzUfSEaC623dk" alt="Portfolio 4"/></div>
+  </div>
+</section>
+
+<!-- ======================== CONTACT ======================== -->
+<section id="contact" class="px-6 md:px-12 py-20 md:py-32 bg-[#131313]">
+  <div class="flex flex-col md:flex-row gap-12 md:gap-16 mb-16 md:mb-24 items-start">
+    <div class="md:w-1/2">
+      <span class="text-[#f2ca50] text-sm font-bold tracking-[0.3em] uppercase mb-4 block reveal">STATION 01 / CONTACT</span>
+      <h2 class="text-5xl md:text-8xl font-black tracking-tighter leading-none mb-6 reveal">CLINICAL<br/>PRECISION.</h2>
+      <p class="text-[#d0c5af] text-lg max-w-md leading-relaxed reveal">Use the form below to secure your consultation or visit our Chennai flagship studio.</p>
+    </div>
+    <div class="md:w-1/2 w-full aspect-[4/3] bg-[#201f1f] overflow-hidden reveal-right">
+      <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE4fxoC09DTpqpDf9yFL6fpTSCqv8jQlycAatRzv86aV-XwueV07KkhcHObT8gb2LDu6umKWM_-rp-jIrMsVKRLAg8XR3EGLVuCEm757JeAcVDVl6MkgMIi2cIuEbGGmdbvFGzNK5fn1fH5Bw7I9RucHkf6fsx6FnzumefgYHcxVTPbnpVbsSpFcQ39JGsruaxeM-gcf7-I16tD4XSbLrpAOG3ekOnncU_vtujKE2lKf5p7hW9iVPwIK60GIoCVPNUnCxhpxMKKsU" alt="Tattoo Studio"/>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-1 bg-[#4d4635]/10">
+    <div class="lg:col-span-7 bg-[#131313] p-8 md:p-12 reveal">
+      <div class="flex items-center gap-4 mb-10"><span class="material-symbols-outlined text-[#f2ca50] text-3xl">assignment_ind</span><h3 class="text-2xl md:text-3xl font-bold tracking-tighter uppercase">Intake Form</h3></div>
+      <form class="grid grid-cols-1 md:grid-cols-2 gap-6" onsubmit="event.preventDefault();alert('Thank you! We will contact you shortly.')">
+        <div class="space-y-2"><label class="text-xs font-bold tracking-widest text-[#d0c5af] uppercase">Full Name</label><input class="w-full bg-[#0e0e0e] border-0 border-b border-[#4d4635] focus:border-[#f2ca50] focus:ring-0 text-white py-3 font-medium" placeholder="Your Name" type="text" required/></div>
+        <div class="space-y-2"><label class="text-xs font-bold tracking-widest text-[#d0c5af] uppercase">Phone</label><input class="w-full bg-[#0e0e0e] border-0 border-b border-[#4d4635] focus:border-[#f2ca50] focus:ring-0 text-white py-3 font-medium" placeholder="+91 000 000 0000" type="tel"/></div>
+        <div class="md:col-span-2 space-y-2"><label class="text-xs font-bold tracking-widest text-[#d0c5af] uppercase">Email</label><input class="w-full bg-[#0e0e0e] border-0 border-b border-[#4d4635] focus:border-[#f2ca50] focus:ring-0 text-white py-3 font-medium" placeholder="you@email.com" type="email" required/></div>
+        <div class="md:col-span-2 space-y-2"><label class="text-xs font-bold tracking-widest text-[#d0c5af] uppercase">Tattoo Description</label><textarea class="w-full bg-[#0e0e0e] border-0 border-b border-[#4d4635] focus:border-[#f2ca50] focus:ring-0 text-white py-3 font-medium resize-none" placeholder="Concept, size, placement..." rows="3"></textarea></div>
+        <div class="space-y-2"><label class="text-xs font-bold tracking-widest text-[#d0c5af] uppercase">Preferred Date</label><input class="w-full bg-[#0e0e0e] border-0 border-b border-[#4d4635] focus:border-[#f2ca50] focus:ring-0 text-white py-3 font-medium" type="date"/></div>
+        <div class="md:col-span-2 pt-4"><button type="submit" class="w-full ink-gradient text-[#3c2f00] font-headline font-black py-5 tracking-widest uppercase hover:opacity-90 active:scale-[0.98] transition-all pulse-gold">SUBMIT REQUEST</button></div>
+      </form>
+    </div>
+    <div class="lg:col-span-5 bg-[#1c1b1b] p-8 md:p-12 space-y-12 reveal-right">
+      <div>
+        <h4 class="text-xs font-bold tracking-[0.3em] text-[#f2ca50] uppercase mb-6">Direct Communication</h4>
+        <div class="space-y-4">
+          <a class="group flex items-center gap-4" href="tel:+919600977282"><div class="w-12 h-12 flex items-center justify-center bg-[#2a2a2a] group-hover:bg-[#f2ca50] transition-colors"><span class="material-symbols-outlined text-white group-hover:text-[#3c2f00]">call</span></div><div><p class="text-xs text-[#d0c5af] uppercase font-bold tracking-widest">Phone</p><p class="text-lg font-bold">+91 96009 77282</p></div></a>
+          <a class="group flex items-center gap-4" href="https://wa.me/919600977282" target="_blank"><div class="w-12 h-12 flex items-center justify-center bg-[#2a2a2a] group-hover:bg-[#25D366] transition-colors"><span class="material-symbols-outlined text-white group-hover:text-white">chat</span></div><div><p class="text-xs text-[#d0c5af] uppercase font-bold tracking-widest">WhatsApp</p><p class="text-lg font-bold">START CHAT</p></div></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-xs font-bold tracking-[0.3em] text-[#f2ca50] uppercase mb-6">Clinical Hours</h4>
+        <div class="p-6 bg-[#0e0e0e] border-l-4 border-[#f2ca50]">
+          <div class="flex justify-between items-center mb-2"><span class="font-bold">MON — SAT</span><span class="text-[#f2ca50] font-bold">9AM — 9PM</span></div>
+          <div class="flex justify-between items-center opacity-40"><span class="font-bold">SUNDAY</span><span class="font-bold">CLOSED</span></div>
+        </div>
+      </div>
+      <div class="flex items-start gap-3 p-4 bg-[#97b0ff]/10 border border-[#97b0ff]/20">
+        <span class="material-symbols-outlined text-[#97b0ff]">verified_user</span>
+        <div><p class="text-xs font-bold text-[#97b0ff] uppercase tracking-widest mb-1">HYGIENE STATUS</p><p class="text-sm text-[#d0c5af]">ISO-Certified Grade A Surgical Environment.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== CTA ======================== -->
+<section class="px-6 md:px-12 py-20 md:py-32 text-center bg-[#131313] relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-b from-[#f2ca50]/5 to-transparent pointer-events-none"></div>
+  <div class="relative z-10 max-w-4xl mx-auto">
+    <span class="text-[#f2ca50] uppercase tracking-[0.5em] font-bold text-xs mb-6 block reveal">READY FOR YOUR PERMANENT ADDITION?</span>
+    <h2 class="text-5xl md:text-8xl font-black uppercase mb-10 tracking-tighter leading-none reveal">Your canvas<br/>awaits its soul</h2>
+    <a href="#contact" class="inline-block ink-gradient text-[#3c2f00] font-black text-lg md:text-xl uppercase px-10 md:px-12 py-5 md:py-6 hover:scale-105 transition-transform duration-300 reveal">BOOK A CONSULTATION</a>
+  </div>
+</section>
+
+<!-- ======================== FOOTER ======================== -->
+<footer class="w-full py-16 md:py-20 px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 bg-[#131313] border-t border-white/5">
+  <div class="space-y-6">
+    <div class="text-xl font-black text-[#f2ca50] tracking-tighter">MR. TATTOO</div>
+    <p class="text-white/40 font-medium text-xs tracking-widest uppercase leading-loose">Marina Beach, Triplicane,<br/>Chennai, Tamil Nadu 600005.<br/>+91 96009 77282</p>
+  </div>
+  <div class="flex flex-col gap-3">
+    <span class="text-white/20 font-bold text-xs uppercase tracking-widest mb-2">Connect</span>
+    <a class="text-white/40 font-medium text-xs tracking-widest uppercase hover:text-[#f2ca50] transition-colors" href="https://www.instagram.com/_mr.tattoos_" target="_blank">INSTAGRAM</a>
+    <a class="text-white/40 font-medium text-xs tracking-widest uppercase hover:text-[#f2ca50] transition-colors" href="#">FACEBOOK</a>
+    <a class="text-white/40 font-medium text-xs tracking-widest uppercase hover:text-[#f2ca50] transition-colors" href="#">TWITTER</a>
+  </div>
+  <div class="flex flex-col justify-between items-start md:items-end">
+    <div class="md:text-right mb-6"><span class="text-white font-bold text-xs tracking-widest block mb-2">STUDIO HOURS</span><span class="text-[#f2ca50] font-medium text-xs tracking-widest">MON-SAT 9AM-9PM</span></div>
+    <div class="text-white/40 font-medium text-[10px] tracking-widest uppercase md:text-right">© 2025 MR. TATTOO. SURGICAL PRECISION. ARTISTIC SOUL.</div>
+  </div>
+</footer>
+
+<!-- ======================== JAVASCRIPT ======================== -->
+<script>
+// Mobile menu
+const hamburger=document.getElementById('hamburger-btn'),mobileMenu=document.getElementById('mobile-menu');
+function closeMobileMenu(){hamburger.classList.remove('open');mobileMenu.classList.remove('open')}
+hamburger.addEventListener('click',()=>{hamburger.classList.toggle('open');mobileMenu.classList.toggle('open')});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
+
+// Nav active state on scroll
+const sections=document.querySelectorAll('section[id]'),navLinks=document.querySelectorAll('.nav-link');
+window.addEventListener('scroll',()=>{
+  let c='';sections.forEach(s=>{if(window.scrollY>=s.offsetTop-200)c=s.getAttribute('id')});
+  navLinks.forEach(l=>{l.classList.remove('active');if(l.getAttribute('href')==='#'+c)l.classList.add('active')});
+  // Nav shrink
+  document.getElementById('main-nav').classList.toggle('py-3',window.scrollY>100);
+  document.getElementById('main-nav').classList.toggle('py-5',window.scrollY<=100);
+});
+
+// GSAP Animations
+gsap.registerPlugin(ScrollTrigger);
+// Reveal animations
+document.querySelectorAll('.reveal').forEach(el=>{gsap.to(el,{opacity:1,y:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 85%',toggleActions:'play none none none'}})});
+document.querySelectorAll('.reveal-left').forEach(el=>{gsap.to(el,{opacity:1,x:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 85%',toggleActions:'play none none none'}})});
+document.querySelectorAll('.reveal-right').forEach(el=>{gsap.to(el,{opacity:1,x:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 85%',toggleActions:'play none none none'}})});
+document.querySelectorAll('.reveal-scale').forEach(el=>{gsap.to(el,{opacity:1,scale:1,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 85%',toggleActions:'play none none none'}})});
+// Parallax images
+document.querySelectorAll('.parallax-img').forEach(img=>{gsap.to(img,{yPercent:-15,ease:'none',scrollTrigger:{trigger:img.parentElement,start:'top bottom',end:'bottom top',scrub:true}})});
+// Hero entrance - animate from hidden state
+gsap.set('#hero-tag, #hero h1, #hero p, #hero-cta',{opacity:0,y:40});
+gsap.timeline().to('#hero-tag',{opacity:1,y:0,duration:0.8,ease:'power3.out',delay:0.2}).to('#hero h1',{opacity:1,y:0,duration:1,ease:'power4.out'},'-=0.5').to('#hero p',{opacity:1,y:0,duration:0.8,ease:'power3.out'},'-=0.5').to('#hero-cta',{opacity:1,y:0,duration:0.8,ease:'power3.out'},'-=0.4');
+</script>
+</body>
+</html>
